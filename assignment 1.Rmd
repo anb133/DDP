@@ -1,0 +1,23 @@
+---
+title: "Week 2 Assignment"
+author: "Anna Barbayeva"
+date: "December 5, 2016"
+output: html_document
+---
+
+## December 5, 2016
+```{r, echo=FALSE, warning=FALSE}
+library(leaflet)
+
+AUBGicon <- makeIcon(
+  iconUrl = "https://www.aubg.edu/talks/wp-content/uploads/2012/09/Logo-Non-Transparent.png",
+  iconWidth = 25, iconHeight = 40)
+
+AUBGpopup<- "My university: <a href='https://www.aubg.edu/'> American University in Bulgaria</a>"
+
+AUBGLatLong <- data.frame(lat = c(42.0130), lng = c(23.0954))
+AUBGLatLong %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon=AUBGicon, popup = AUBGpopup)
+```
